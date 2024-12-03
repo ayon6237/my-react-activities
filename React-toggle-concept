@@ -1,0 +1,25 @@
+import React,{useState} from 'react'
+
+const App = () => {
+  const [toggle,setToggle] = useState(true);
+ 
+
+  const seeClick =()=>{
+    setToggle(true);
+  }
+  const hideClick =()=>{
+    setToggle(false)
+  }
+ 
+  return (
+    <div>
+      {toggle && <p>Sad childe not yet mirth evil then he weary weary did. Not muse so nor might at grace, all lay delphis and call. Birth of his none one bower and to. Pile fall now did by dares the any what. Satiety the he venerable mothernot. His for sacred of and.</p>}
+     
+     <button onClick={seeClick}>See text</button>
+     <button onClick={hideClick}>Hide text</button>
+      
+    </div>
+  )
+}
+
+export default App
