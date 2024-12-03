@@ -1,0 +1,28 @@
+import React, { useEffect, useState } from 'react'
+
+const App = () => {
+  const [todos,setTodos]=useState(null);
+
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then((res)=>{
+      return res.json();
+    })
+    .then((data)=>{
+      setTodos(data);
+    })
+  },[])
+
+  return (
+    <div>
+      {todos && todos.map((todo,index)=>{
+        return <>
+          <p>{todo.id}</p>
+          <h3 key={index}>{todo.title}</h3>
+        </>
+      })}
+    </div>
+  )
+}
+
+export default App
